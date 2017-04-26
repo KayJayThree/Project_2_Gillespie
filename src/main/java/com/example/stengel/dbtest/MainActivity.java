@@ -114,5 +114,8 @@ public class MainActivity extends AppCompatActivity {
         bCreate.setVisibility(bCreate.GONE);             // Set Create button visible
         bCreateAccount.setVisibility(bCreateAccount.VISIBLE);  // Disabling the Create Account Button
         bLoginbutton.setVisibility(bLoginbutton.VISIBLE);
+
+        Toast.makeText(this,"Account has been created!",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Account has been created!",Toast.LENGTH_LONG).show();
     }
 }//create account method
