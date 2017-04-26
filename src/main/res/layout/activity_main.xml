@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.stengel.dbtest.MainActivity">
 
+    <!-- TEXT BOX WITH USERNAME TEXT  -->
     <TextView
     android:layout_width="125dp"
     android:layout_height="50dp"
@@ -21,26 +22,146 @@
     android:layout_alignParentStart="true"
     android:layout_marginTop="56dp" />
 
+    <!-- TEXT BOX FOR USERNAME INPUT  FIELD  -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/edTxtUserName"
         android:layout_alignTop="@+id/txtUserName"
         android:layout_above="@+id/txtPassword"
-        android:layout_toEndOf="@+id/txtPassword" />
+        android:layout_toEndOf="@+id/txtPassword" />   <!-- gone  -->
 
+
+    <!-- TEXT BOX WITH PASSWORD INPUT FIELD   -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edTxtPassword"
+        android:layout_below="@+id/edTxtUserName"
+        android:layout_toEndOf="@+id/txtPassword" />   <!-- gone  -->
+
+    <!-- TEXT BOX WITH PASSWORD TEXT  -->
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="@string/password"
+        android:id="@+id/txtPassword"
+        android:textSize="24sp"
+        android:layout_below="@+id/txtUserName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- BUTTON TO LOGIN TO APPLICATION  -->
+    <Button
+        android:text="@string/login"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnLogin"
+        android:onClick="btnLogin_onClick"
+        android:layout_below="@+id/edTxtPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- BUTTON TO CLICK IF YOU WANT TO CREATE AN ACCOUNT -->
+    <Button
+        android:text="@string/create_account"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnCreateAccount"
+        android:onClick="btnCreateAccount_onClick"
+        android:layout_below="@+id/edTxtPassword"
+        android:layout_toRightOf="@+id/btnLogin"
+        android:layout_toEndOf="@+id/btnLogin"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:visibility="visible" />
+
+    <!-- SCROLLBAR TO SELECT ICONS  -->
+    <HorizontalScrollView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:onClick="btnCreateAccount_onClick"
+        android:id="@+id/hScrollView2"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/hScrollView"
+        android:layout_alignLeft="@+id/hScrollView"
+        android:layout_alignStart="@+id/hScrollView"
+        android:visibility="visible" >  <!-- gone  -->
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginRight="73dp"
+            android:layout_marginEnd="73dp"
+            android:layout_below="@+id/hScrollView">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/red"
+                android:id="@+id/imgColorView1"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/yellow"
+                android:id="@+id/imgColorView2"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/orange"
+                android:id="@+id/imgColorView3"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/green"
+                android:id="@+id/imgColorView4"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/blue"
+                android:id="@+id/imgColorView5"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- TEXT BOX TO PICK COLOR  -->
+    <TextView
+        android:text="@string/pick_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textColor"
+        android:visibility="visible"
+        android:layout_alignBottom="@+id/hScrollView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp"
+        android:layout_alignRight="@+id/textIcon"
+        android:layout_alignEnd="@+id/textIcon" />
+
+    <!-- BUTTON TO CREATE NEW ACCOUNT WITH NEW INFORMATION -->
+    <Button
+        android:text="@string/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCreateNewAccount"
+        android:onClick="btnCreateNewAccount_onClick"
+        android:layout_below="@+id/hScrollView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="visible" />
+
+    <!-- SCROLLBAR TO SELECT COLORS  -->
     <HorizontalScrollView
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/btnCreateAccount"
-            android:layout_alignRight="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginRight="75dp"
-            android:layout_marginEnd="75dp"
-            android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
             android:onClick="btnCreateAccount_onClick"
             android:id="@+id/hScrollView"
-            android:visibility="visible" >   <!-- gone  -->
+            android:visibility="visible"
+        android:layout_below="@+id/btnLogin"
+        android:layout_toRightOf="@+id/btnLogin"
+        android:layout_toEndOf="@+id/btnLogin">   <!-- gone  -->
 
         <LinearLayout
                 android:layout_height="50dp"
@@ -92,131 +213,18 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-    <Button
-            android:text="@string/create"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/hScrollView2"
-            android:layout_alignRight="@+id/hScrollView2"
-            android:layout_alignEnd="@+id/hScrollView2"
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp"
-            android:id="@+id/btnCreateNewAccount"
-            android:onClick="btnCreateNewAccount_onClick"
-            android:visibility="visible" /><!-- gone  -->
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/edTxtPassword"
-        android:layout_below="@+id/edTxtUserName"
-        android:layout_toEndOf="@+id/txtPassword" />
-
     <TextView
         android:text="@string/pick_icon"
         android:layout_height="wrap_content"
         android:layout_width="300sp"
-        android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp"
         android:id="@+id/textIcon"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
         android:layout_above="@+id/hScrollView2"
-        android:layout_toEndOf="@+id/hScrollView"
-        android:layout_marginBottom="12dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:visibility="visible" /><!-- gone  -->
-
-    <TextView
-        android:text="@string/pick_color"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/hScrollView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="14dp"
-        android:id="@+id/textColor"
-        android:visibility="visible" /><!-- gone  -->
-
-    <TextView
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:text="@string/password"
-        android:id="@+id/txtPassword"
-        android:textSize="24sp"
-        android:layout_below="@+id/txtUserName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="@string/login"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:id="@+id/btnLogin"
-        android:onClick="btnLogin_onClick"
-        android:layout_below="@+id/edTxtPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="@string/create_account"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:id="@+id/btnCreateAccount"
-        android:onClick="btnCreateAccount_onClick"
-        android:layout_below="@+id/edTxtPassword"
-        android:layout_toRightOf="@+id/btnLogin"
-        android:layout_toEndOf="@+id/btnLogin"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:visibility="visible" />
-
-    <HorizontalScrollView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:onClick="btnCreateAccount_onClick"
-        android:id="@+id/hScrollView2"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/hScrollView"
-        android:layout_alignLeft="@+id/hScrollView"
-        android:layout_alignStart="@+id/hScrollView"
-        android:visibility="visible" >  <!-- gone  -->
-
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginRight="73dp"
-            android:layout_marginEnd="73dp"
-            android:layout_below="@+id/hScrollView">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/red"
-                android:id="@+id/imgColorView1"/>
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/yellow"
-                android:id="@+id/imgColorView2"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/orange"
-                android:id="@+id/imgColorView3"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/green"
-                android:id="@+id/imgColorView4"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/blue"
-                android:id="@+id/imgColorView5"/>
-        </LinearLayout>
-    </HorizontalScrollView>
+        android:layout_toLeftOf="@+id/edTxtPassword"
+        android:layout_toStartOf="@+id/edTxtPassword" />
 
 
 </RelativeLayout>
